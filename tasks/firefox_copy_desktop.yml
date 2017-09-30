@@ -1,0 +1,7 @@
+---
+- name: firefox | Template firefox.desktop
+  become: yes
+  become_user: "{{ firefox_desktop_user }}"
+  template:
+    src: firefox.desktop
+    dest: ~/.local/share/applications/firefox.desktop

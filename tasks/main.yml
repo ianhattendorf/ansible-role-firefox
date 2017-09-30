@@ -12,4 +12,7 @@
   when: ((ansible_system == 'Darwin') and
          (firefox_needs_install is defined))
 
+- include: firefox_copy_desktop.yml
+  when: firefox_copy_desktop_file
+
 - include: firefox_cleanup.yml

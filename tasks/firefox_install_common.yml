@@ -23,9 +23,11 @@
   set_fact: firefox_download_url='{{firefox_release_root_url}}/{{firefox_version}}/{{firefox_arch}}/{{firefox_lang}}/{{firefox_archive_name}}'
 
 - name: firefox | Create temporary directory
-  command: mktemp -d
+  tempfile:
+    state: directory
+    suffix: firefox
   register: firefox_temp_dir
 
 - name: firefox | Download Firefox archive
-  get_url: url='{{firefox_download_url}}' dest='{{firefox_temp_dir.stdout}}/{{firefox_archive_name}}'
+  get_url: url='{{firefox_download_url}}' dest='{{firefox_temp_dir.path}}/{{firefox_archive_name}}'
   register: firefox_dl_status

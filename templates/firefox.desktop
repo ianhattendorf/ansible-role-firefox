@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Firefox
+GenericName=Firefox
+Exec={{ firefox_install_root }}/firefox-{{ firefox_version }}/firefox
+Terminal=false
+Icon={{ firefox_install_root }}/firefox-{{ firefox_version }}/browser/icons/mozicon128.png
+Type=Application
+Categories=Application;Network;X-Developer;
+Comment=Firefox Web Browser.
+
